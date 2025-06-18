@@ -27,9 +27,7 @@ def positive_sum(arr):
     # Case 3
     a = sum([i for i in arr if i > 0])
     print(a)
-
-    # Case 4
-    return sum([i for i in arr if i > 0])
+    # return sum([i for i in arr if i > 0])
 
     # Solution
     # return sum(x for x in arr if x > 0)
