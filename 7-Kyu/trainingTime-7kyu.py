@@ -23,7 +23,7 @@ def shuffle_it(arr, *args):
             for i in [x,y]:
         #         print("lho?")
         #         i.replace(arr[a])
-                print(i)
+                # print(i)
         # print(arg)
     print(x,y)
     print(y,x)
