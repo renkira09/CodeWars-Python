@@ -11,27 +11,37 @@
 """
 def shuffle_it(arr, *args):
     #your code here
-    x,y = [1,2]
-    y,x = [x, y]
-    for arg in args:
-        # print("^"*10)
-        for a in range(len(arg)):
-            # print(arr[arg[a]])
-            x,y.append(arr[arg[a]])
-        #     # print(a)
-        #     # print("arr -- ", arr[a])
-            for i in [x,y]:
-        #         print("lho?")
-        #         i.replace(arr[a])
-                # print(i)
-        # print(arg)
-    print(x,y)
-    print(y,x)
-    print("="*20)
+    print("-"*15)
 
-shuffle_it([1,2,3,4,5],[1,2])
-# shuffle_it([1,2,3,4,5],[1,2],[3,4])
-# shuffle_it([1,2,3,4,5],[1,2],[3,4],[2,3])
+    # # Case 2
+    # for arg in args:
+    #     dump = []
+    #     for a in arg[::-1]:
+    #         dump.append(arr[a])
+    #         arr.pop(a)
+    #     x,y = dump
+    #     arr.insert(arg[0], x)
+    #     arr.insert(arg[1], y)
+
+    # Case 3
+    for arg in args:
+        dump = [arr[a] for a in arg[::-1]]
+        x,y = arg
+        arr[x] = dump[0]
+        arr[y] = dump[1]
+
+    return arr
+
+    # Solution
+    # for x,y in T:
+    #     A[x],A[y]=A[y],A[x]
+    # return A
+
+
+print(shuffle_it([1,2,3,4,5],[1,2]))
+print(shuffle_it([1,2,3,4,5],[1,2],[3,4]))
+print(shuffle_it([1,2,3,4,5],[1,2],[3,4],[2,3]))
+print(shuffle_it([1,2,3,4,5],[1,2],[3,4],[2,3],[4,4]))
 
 def cheeseshop(kind, *arguments, **keywords):
     print("-- Do you have any", kind, "?")
